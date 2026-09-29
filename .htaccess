@@ -11,6 +11,12 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # --- Leave domain validation alone (must stay the FIRST rule) -----------
+  # AutoSSL / Let's Encrypt fetch these over plain http to prove domain
+  # control. Redirecting them to https on a host whose certificate is not
+  # issued yet makes the handshake fail, so the certificate never issues.
+  RewriteRule ^\.well-known/ - [L]
+
   # --- Retire the /2026/ preview path -------------------------------------
   # /2026/            -> /
   # /2026/about.html  -> /about.html
