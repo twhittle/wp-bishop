@@ -159,8 +159,10 @@ zipped, downloaded, and deleted; AutoSSL ran; the Stripe link is corrected.
 Carried from `README.md`. These matter only insofar as this build is used as the
 spec for WordPress pages:
 
-- `PORTAL_URL` in `build.py` is still `#`, so the Client Portal button renders
-  as a dead link. `PAYMENT_URL` is set to the client's Stripe link.
+- `PORTAL_URL` in `build.py` stays `#`. The mockup assumed a single external
+  portal behind one button; the live page is a hub linking to ShareFile and
+  ConnectWise alongside tax forms, so there is no single URL to set. Not an
+  open task. `PAYMENT_URL` is set to the client's Stripe link.
 - The contact form is markup only and posts nowhere.
 - Home-page testimonials are placeholders, not real client quotes.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers, and Gina Blair are

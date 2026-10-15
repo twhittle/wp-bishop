@@ -82,8 +82,11 @@ Site constants (phone, address, portal URLs) live at the top of that file.
 
 ## Open items
 
-- `PORTAL_URL` in `build.py` is still `#` — set it to the real destination and
-  re-run the build. (`PAYMENT_URL` is now the client's Stripe payment link.)
+- `PORTAL_URL` in `build.py` is `#` and stays that way. The mockup assumed one
+  external portal behind a single button; the live Client Portal page is instead
+  a hub linking out to ShareFile and ConnectWise alongside tax forms, so there
+  is no single URL to set. Not an open task.
+- `PAYMENT_URL` is the client's Stripe payment link.
 - The contact form is markup only; it needs wiring to a form handler (Elementor
   Forms on rebuild).
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers and Gina Blair are
