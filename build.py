@@ -14,7 +14,7 @@ YEAR = 2026
 
 # Fill these in when the real destinations are known.
 PORTAL_URL = "#"
-PAYMENT_URL = "#"
+PAYMENT_URL = "https://buy.stripe.com/bJecN7da21hf6yP9Eh8Ra01"
 
 SERVICES = [
     ("tax-preparation", "Tax Preparation",

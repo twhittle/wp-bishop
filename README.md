@@ -82,8 +82,8 @@ Site constants (phone, address, portal URLs) live at the top of that file.
 
 ## Open items
 
-- `PORTAL_URL` and `PAYMENT_URL` in `build.py` are still `#` — set them to the
-  real destinations and re-run the build.
+- `PORTAL_URL` in `build.py` is still `#` — set it to the real destination and
+  re-run the build. (`PAYMENT_URL` is now the client's Stripe payment link.)
 - The contact form is markup only; it needs wiring to a form handler (Elementor
   Forms on rebuild).
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers and Gina Blair are
