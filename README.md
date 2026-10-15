@@ -90,8 +90,8 @@ Site constants (phone, address, portal URLs) live at the top of that file.
 - The contact form is markup only. The live site's contact page has no form —
   email, phone and a map instead — so this was never needed. Not an open task.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers and Gina Blair are
-  role-level placeholders. Real bios were not available; swap them in `STAFF`
-  in `build.py`.
+  role-level placeholders in this mockup only — the live site carries real
+  bios. Not an open task.
 - Testimonials on the mockup's home page are representative placeholders, not
   real client quotes. No testimonials appear anywhere on the live site, so these
   never shipped. Not an open task.

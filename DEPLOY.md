@@ -169,4 +169,5 @@ spec for WordPress pages:
 - Home-page testimonials in the mockup are placeholders. None appear anywhere
   on the live site, so they never shipped. Not an open task.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers, and Gina Blair are
-  role-level placeholders.
+  role-level placeholders in this mockup only — the live site carries real
+  bios. Not an open task.
