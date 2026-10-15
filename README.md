@@ -92,5 +92,6 @@ Site constants (phone, address, portal URLs) live at the top of that file.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers and Gina Blair are
   role-level placeholders. Real bios were not available; swap them in `STAFF`
   in `build.py`.
-- Testimonials on the home page are representative placeholders, not real
-  client quotes. Replace before publishing.
+- Testimonials on the mockup's home page are representative placeholders, not
+  real client quotes. No testimonials appear anywhere on the live site, so these
+  never shipped. Not an open task.

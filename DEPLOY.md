@@ -166,6 +166,7 @@ spec for WordPress pages:
 - The contact form in the mockup is markup only. The live contact page has
   no form at all — email, phone and a map instead — so this never carried
   across. Not an open task.
-- Home-page testimonials are placeholders, not real client quotes.
+- Home-page testimonials in the mockup are placeholders. None appear anywhere
+  on the live site, so they never shipped. Not an open task.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers, and Gina Blair are
   role-level placeholders.
