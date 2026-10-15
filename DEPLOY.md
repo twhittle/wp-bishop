@@ -163,7 +163,9 @@ spec for WordPress pages:
   portal behind one button; the live page is a hub linking to ShareFile and
   ConnectWise alongside tax forms, so there is no single URL to set. Not an
   open task. `PAYMENT_URL` is set to the client's Stripe link.
-- The contact form is markup only and posts nowhere.
+- The contact form in the mockup is markup only. The live contact page has
+  no form at all — email, phone and a map instead — so this never carried
+  across. Not an open task.
 - Home-page testimonials are placeholders, not real client quotes.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers, and Gina Blair are
   role-level placeholders.

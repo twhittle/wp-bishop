@@ -87,8 +87,8 @@ Site constants (phone, address, portal URLs) live at the top of that file.
   a hub linking out to ShareFile and ConnectWise alongside tax forms, so there
   is no single URL to set. Not an open task.
 - `PAYMENT_URL` is the client's Stripe payment link.
-- The contact form is markup only; it needs wiring to a form handler (Elementor
-  Forms on rebuild).
+- The contact form is markup only. The live site's contact page has no form —
+  email, phone and a map instead — so this was never needed. Not an open task.
 - Bios for Cathy Davis, Lorie Zimmer, Stephanie Powers and Gina Blair are
   role-level placeholders. Real bios were not available; swap them in `STAFF`
   in `build.py`.
