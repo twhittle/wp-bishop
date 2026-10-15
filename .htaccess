@@ -1,9 +1,11 @@
-# Bishop & Adkins, P.A. — static site
-# Belongs in the document root (public_html), NOT in a subdirectory.
+# Bishop & Adkins, P.A. — static build only. NOT THE LIVE CONFIGURATION.
 #
-# Purpose: serve the static build at the domain root, and permanently redirect
-# the old /2026/ preview URLs to their new root equivalents so bookmarks and
-# anything already indexed keep working.
+# The live site runs WordPress. Do not upload this file to the server: it has
+# no WordPress rewrite block, so it would break every permalink on the site.
+#
+# Kept as a reference for the /2026/ redirects and the .well-known rule below.
+# Borrow individual lines into the live .htaccess; do not copy the file.
+# See DEPLOY.md.
 
 Options -Indexes
 DirectoryIndex index.html
