@@ -57,10 +57,14 @@ hostname whose certificate has not been issued yet, the handshake fails and the
 certificate never issues — a deadlock that blocked `www` until this line was
 added.
 
-It must sit **above** any redirect rules. WordPress rewrites its own `.htaccess`
-in some circumstances (permalink changes, certain plugins), so if a future
-renewal fails, check that this line still exists before investigating anything
-else.
+It must sit **above** any redirect rules, and **outside** the
+`# BEGIN WordPress` / `# END WordPress` markers. WordPress regenerates
+everything between those markers on permalink changes and with some plugins —
+the file says so itself — so a rule placed inside them will eventually be wiped
+and the next renewal will fail. If a renewal does fail, check this line still
+exists before investigating anything else.
+
+See the layout under "The live `.htaccess`" below.
 
 ## Editing live content
 
@@ -86,26 +90,42 @@ it is wrapped.
 
 This affected the Stripe payment link and has been corrected in WordPress.
 
-## The `/2026/` preview path — needs checking
+## The live `.htaccess`
 
-The static build was originally uploaded to `bishopandadkins.com/2026/` as a
-preview. **Whether that folder still exists on the server is unverified.**
-
-If it is still there, it is publicly reachable and indexable — a second copy of
-the firm's site competing with the real one in search results, showing
-placeholder testimonials and dead buttons.
-
-Check the document root for a `2026` folder in File Manager. If present, delete
-it, and add a redirect to the live `.htaccess` so any shared or indexed links
-still resolve:
+Custom rules go in their own block **above** `# BEGIN WordPress`, never between
+the WordPress markers. Apache reads the file top to bottom, so rules placed
+there run before WordPress's catch-all (`RewriteRule . /index.php`) sweeps every
+request into WordPress — and they survive WordPress regenerating its own block.
 
 ```apache
+# BEGIN Custom
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Let AutoSSL validate the domain. Must stay above the redirects below.
+RewriteRule ^\.well-known/ - [L]
+
+# Retired /2026/ preview folder
 RewriteRule ^2026/?$ / [R=301,L]
 RewriteRule ^2026/(.+)$ /$1 [R=301,L]
+</IfModule>
+# END Custom
+
+# BEGIN WordPress
+#   ... WordPress's own block, left exactly as WordPress generates it ...
+# END WordPress
 ```
 
-Place these below the `.well-known` line and above WordPress's own rewrite
-block.
+## The `/2026/` preview path — removed
+
+The static build was originally uploaded to `bishopandadkins.com/2026/` as a
+preview. That folder has been zipped, downloaded, and deleted from the server,
+so the duplicate copy of the site is no longer public.
+
+The two `^2026/` rules above redirect any old preview link to the equivalent
+live page rather than a 404, which also tells search engines where the content
+moved. Keep them indefinitely — they cost nothing and old links circulate for
+years.
 
 ## `.htaccess` in this repo is not the live one
 
@@ -128,9 +148,11 @@ Not confirmed (this environment's network policy blocks the domain, so the live
 site could not be inspected):
 
 - the document root path
-- whether `/2026/` still exists
 - the current contents of the live `.htaccess`
 - certificate coverage after the AutoSSL run
+
+Reported by the site owner rather than verified here: the `/2026/` folder was
+zipped, downloaded, and deleted; AutoSSL ran; the Stripe link is corrected.
 
 ## Open items in this repo
 
